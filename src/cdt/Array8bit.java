@@ -1,6 +1,6 @@
 package cdt;
 
-//import (vorgegebene) array to string methode 
+//import (vorgegebene) array to string Methode 
 import java.util.Arrays; 
 
 public class Array8bit {
@@ -17,7 +17,7 @@ public class Array8bit {
 			zahl = zahl * 2;
 		}
         
-		//Arrays.toString methode Ausgabe
+		//Arrays.toString Methode Ausgabe
 		System.out.print(Arrays.toString(zahlen));
 
 	}
