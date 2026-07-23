@@ -1,7 +1,8 @@
 package cdt;
 
+import java.util.Arrays; 
 
-public class BubbleSort {
+public class BubbleSort { 
 
 	public BubbleSort() {
 		// TODO Auto-generated constructor stub
@@ -28,6 +29,7 @@ public class BubbleSort {
 		for (int wert : werte) {
 		            System.out.print(wert + " ");
 		        }
+		System.out.print(Arrays.toString(werte));
 		    }
 
 
