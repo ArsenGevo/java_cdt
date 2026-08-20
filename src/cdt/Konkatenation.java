@@ -2,7 +2,7 @@ package cdt;
 
 public class Konkatenation {
 	
-	//Methodenüberladung (Overloading)
+	//Konkatenation und Methodenüberladung (Overloading)
 
 	public static void main(String[] args) {
 
