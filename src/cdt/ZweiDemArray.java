@@ -12,7 +12,7 @@ public class ZweiDemArray {
 		
 		for (int zeile = 0; zeile < zwDemArr.length; zeile++) {
 			
-			for (int spalte = 0; i < zwDemArr[zeile].length spalte++) {
+			for (int spalte = 0; spalte < zwDemArr[zeile].length; spalte++) {
 				
 				zwDemArr[zeile][spalte] = 1;
 				
