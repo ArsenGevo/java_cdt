@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ScannerUeb {
 
-	/*
+
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
@@ -24,22 +24,7 @@ public class ScannerUeb {
 
 
 	}
-*/
-
-import java.util.Scanner;
-
-public class Main {
-	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("Введите целое число:");
-		if (scanner.hasNextInt()) {
-			int zahl = scanner.nextInt();
-			System.out.println("Вы ввели: " + zahl);
-		} else {
-			System.out.println("Ошибка: нужно ввести целое число.");
-		}
-		scanner.close();
-	}
-}
 
 }
+
+
