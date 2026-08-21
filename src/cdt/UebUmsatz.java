@@ -28,7 +28,7 @@ public class UebUmsatz {
 
 		} else if (ums > 1000 && ums <= 2000) {
 
-			bonus = 200;;
+			bonus = 200;
 		}
 
 		else if (ums > 2000 && ums <= 3000) {
