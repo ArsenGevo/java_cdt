@@ -3,15 +3,7 @@ package cdt;
 import java.util.Scanner;
 
 public class UebVerschalteteIfElse {
-	/*
-	 * In unserem Buchclub möchten wir nur erwachsene Personen aufnehmen, die älter als 20 Jahre sind. Da der Club nur
-auf Einladung zugänglich ist, muss jeder Teilnehmer einen geheimen Code zur Authentifizierung besitzen.
-Das automatisierte System soll zuerst nach dem Alter fragen. Wenn die Person älter als 20 Jahre ist, soll
-anschließend der geheime Code abgefragt werden. Wenn beide Angaben korrekt sind, wird die Meldung
-„Willkommen“ ausgegeben. Andernfalls wird eine Fehlermeldung ausgegeben: entweder „Falscher Code“ oder „Sie
-sind zu jung“.
-Der geheime Code ist „1234“.
-	 */
+
 //static Scanner sc = new Scanner(System.in);
 	
 	public static void main(String[] args) {
