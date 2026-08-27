@@ -4,5 +4,5 @@
 /**
  * 
  */
-module java_cdt {
+module Dp_dokument_tracker {
 }

@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class SwitchCaseUebTag {
 
 	public static void main(String[] args) {
-		
+
 		wochenTagMeldung();
 
 	}
@@ -41,10 +41,8 @@ public class SwitchCaseUebTag {
 		default:
 			System.out.println("Falsche Eingabe!");
 			break;
-
 		}
+
 		scanner.close();
-
 	}
-
 }
