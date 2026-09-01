@@ -9,77 +9,51 @@ import java.net.http.HttpResponse;
 import java.nio.charset.StandardCharsets;
 
 public class TelegrammSender {
-		
- private static final String BOT_TOKEN =
-	            System.getenv("TELEGRAM_BOT_TOKEN");
 
-	    private static final String CHAT_ID =
-	            System.getenv("TELEGRAM_CHAT_ID");
+	private static final String BOT_TOKEN = System.getenv("TELEGRAM_BOT_TOKEN");
 
-	    private static final HttpClient HTTP_CLIENT =
-	           HttpClient.newHttpClient();
-	    
-	    
+	private static final String CHAT_ID = System.getenv("TELEGRAM_CHAT_ID");
+
+	private static final HttpClient HTTP_CLIENT = HttpClient.newHttpClient();
+
 	public static void main(String[] args) {
-		
-		String text = "BOT_TOKEN vorhanden";
-		
-		
-		try {	
-		 //stopSsendensendMessage(text);
-	}
-	catch (IOException e) {
-	    System.out.println("Fehler beim Senden.");
-	} catch (InterruptedException  e) {
-		Thread.currentThread().interrupt();
-		System.out.println("Fehler");
-	}
+
+		String messageText = "Test notification";
+
+		try {
+			// to stop here:
+			sendMessage(messageText);
+		} catch (IOException e) {
+			System.out.println("Fehler beim Senden.");
+		} catch (InterruptedException e) {
+			Thread.currentThread().interrupt();
+			System.out.println("Fehler");
+		}
 
 	}
 
-	    public static void sendMessage(String text)
-	            throws IOException, InterruptedException {
-	    	
-	        if (BOT_TOKEN == null || BOT_TOKEN.isBlank()) {
-	            throw new IllegalStateException(
-	                    "Environment variable TELEGRAM_BOT_TOKEN is missing"
-	            );
-	        }
+	public static void sendMessage(String text) throws IOException, InterruptedException {
 
-	        if (CHAT_ID == null || CHAT_ID.isBlank()) {
-	            throw new IllegalStateException(
-	                    "Environment variable TELEGRAM_CHAT_ID is missing"
-	            );
-	        }
-	    	
+		if (BOT_TOKEN == null || BOT_TOKEN.isBlank()) {
+			throw new IllegalStateException("Environment variable TELEGRAM_BOT_TOKEN is missing");
+		}
 
-	    		String url = "https://api.telegram.org/bot"
-	                + BOT_TOKEN
-	                + "/sendMessage";
+		if (CHAT_ID == null || CHAT_ID.isBlank()) {
+			throw new IllegalStateException("Environment variable TELEGRAM_CHAT_ID is missing");
+		}
 
-	        String body =
-	                "chat_id=" + URLEncoder.encode(CHAT_ID, StandardCharsets.UTF_8)
-	                + "&text=" + URLEncoder.encode(text, StandardCharsets.UTF_8);
+		String url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage";
 
-	        HttpRequest request = HttpRequest.newBuilder()
-	                .uri(URI.create(url))
-	                .header(
-	                        "Content-Type",
-	                        "application/x-www-form-urlencoded"
-	                )
-	                .POST(HttpRequest.BodyPublishers.ofString(body))
-	                .build();
+		String body = "chat_id=" + URLEncoder.encode(CHAT_ID, StandardCharsets.UTF_8) + "&text="
+				+ URLEncoder.encode(text, StandardCharsets.UTF_8);
 
-	        HttpResponse<String> response = HTTP_CLIENT.send(
-	                request,
-	                HttpResponse.BodyHandlers.ofString()
-	        );
+		HttpRequest request = HttpRequest.newBuilder().uri(URI.create(url))
+				.header("Content-Type", "application/x-www-form-urlencoded")
+				.POST(HttpRequest.BodyPublishers.ofString(body)).build();
 
-	        System.out.println(
-	                "Telegram HTTP Status: " + response.statusCode()
-	        );
+		HttpResponse<String> response = HTTP_CLIENT.send(request, HttpResponse.BodyHandlers.ofString());
 
+		System.out.println("Telegram HTTP Status: " + response.statusCode());
 
-	        
-	    }
+	}
 }
