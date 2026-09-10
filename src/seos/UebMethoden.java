@@ -1,4 +1,4 @@
-package Seos;
+package seos;
 
 import java.util.Scanner;
 
